@@ -2,20 +2,21 @@
 // create a function = getAllDirectors with parameters movies
 
 
-     const getAllDirectors = (moviesList) => {
-         return moviesList.map((movie) => {
+     const getAllDirectors = (movieArr) => {
+         return movieArr.map((movie) => {
              return movie.director;
          });  
     } 
 
+  
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors. How could you "clean" a bit this array and make it unified (without duplicates)?
 // clean up the directors list of duplicates
 
     /* const removedDuplicates = movieDirectorsList.reduce((acc, currentValue) => {
         if (acc.includes(currentValue)) {
           return acc;
-        } else {
-          return [...acc, currentValue];
+        } if else {
+          return 
         }
     }, []);
     return removedDuplicates; */
@@ -60,12 +61,6 @@ function dramaMoviesRate(movies){
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 
-function orderByYear(movies) {
-    let sortedMovies = [...movies].sort((a,b) => {
-        return compare(a,b);
-    });
-    return sortedMovies;
-}
 function compare(a,b) {
     if (a.year < b.year) return -1;
     if (a.year > b.year) return 1;
@@ -87,25 +82,6 @@ function orderAlphabetically(movies) {
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
-function turnHoursToMinutes(movies) {
-    const newTime = movies.map(function(movie) {
-    const newMovies = Object.assign({}, movie);
-    newMovies.duration = hoursToMinutes(movie.duration);
-    return newMovies;
-  });
-    function hoursToMinutes(time) {
-        if (!time.includes("min")){
-          let hoursAndMinutes = time.split (" ");
-          return parseInt(hoursAndMinutes[0])*60;  //120 + 22 =142
-        }
-        if (!time.includes("h")){
-          return parseInt(time);
-        }
-          let hoursAndMinutes = time.split (" ");
-          return parseInt(hoursAndMinutes[0])*60+parseInt(hoursAndMinutes[1]);  
-    }
-  return newTime;
-  }
 
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
 
